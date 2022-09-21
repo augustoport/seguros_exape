@@ -1,0 +1,231 @@
+@import "variables";
+
+.input-material {
+  position: relative;
+  padding: 0 15px;
+  background-size: 100% 100%;
+  margin: 0 auto 24px;
+  min-height: 45px;
+  background: $white;
+  border-radius: 0;
+  border-bottom: 1px solid $secondary-color;
+  cursor: pointer;
+
+  &.select {
+    &:before {
+      content: '';
+      width: 0;
+      height: 0;
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      border-top: 7px solid $gray-600;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+  }
+
+  label, select {
+    bottom: 4px;
+    color: $secondary-color !important;
+  }
+
+  textarea ~ label {
+    top: 4px;
+    height: 0;
+  }
+
+  select {
+    appearance: none;
+    -webkit-appearance: none;
+  }
+
+  label {
+    &.auto {
+      width: auto;
+    }
+
+    svg {
+      margin: 0 7px 0 0;
+      position: relative;
+      top: -2px;
+      transition: all 1s;
+    }
+  }
+
+  input, select, textarea {
+    width: 100%;
+    padding: 15px 0 0 0;
+    font-size: 17px;
+    color: $primary-color;
+    background-color: $input-bg;
+    border: none;
+    border-radius: 0;
+    box-shadow: none !important;
+
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active {
+    }
+
+    &.large {
+      text-align: center;
+      font-size: $large;
+    }
+
+    &:focus {
+      outline: 0;
+
+      ~ span {
+        width: 100%;
+        transition: all 0.35s ease;
+      }
+    }
+
+    &:focus ~ label,
+    &:valid ~ label,
+    &.valid ~ label {
+      position: absolute;
+      bottom: 20px;
+      font-size: $small + 1px;
+      transition: all 0.3s ease;
+
+      svg {
+        display: none;
+      }
+    }
+
+    &:invalid,
+    &.invalid {
+      box-shadow: none;
+    }
+
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active {
+      box-shadow: 0 0 0 30px $white inset;
+    }
+
+    ~ span {
+      display: block;
+      position: absolute;
+      transition: all 0.35s ease;
+    }
+  }
+
+  textarea {
+    //resize: none;
+    //margin-top: 1.3rem;
+    margin: 11px 0 12px 0;
+    line-height: 1.2;
+    min-height: 55px;
+
+    + label {
+      background: white;
+    }
+  }
+
+  input, select {
+    height: 43px;
+  }
+
+  select {
+    margin-left: 0;
+  }
+
+  // Fix border bug
+  textarea ~ span {
+    bottom: 0;
+  }
+
+  label {
+    position: absolute;
+    pointer-events: none;
+    transition: all 0.25s ease;
+    font-size: 15px;
+    line-height: 1;
+    padding-right: 20px;
+
+    &.disabled {
+      position: absolute;
+      bottom: 20px;
+      font-size: $small + 1px;
+      transition: all 0.3s ease;
+
+      svg {
+        display: none;
+      }
+    }
+
+  }
+
+  &-sm {
+    label {
+      top: 5px;
+    }
+  }
+
+  .right {
+    float: right;
+    position: absolute;
+    top: 17px;
+    right: 15px;
+  }
+}
+
+.border-left-blue {
+  @include media-breakpoint-up('xl') {
+    border-left: 1px solid $primary-color;
+  }
+}
+
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 24px;
+
+  &.small {
+    max-width: 350px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  &__fields {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+  }
+
+  .label {
+    padding-right: 15px;
+    margin: 5px 15px 5px 0;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 25px;
+    border-right: 1px solid $primary-color;
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 1;
+  }
+
+  label {
+    margin: 0;
+    padding: 0;
+    font-size: 13px;
+
+    input {
+      margin: 0 5px 0 0;
+    }
+
+    span {
+      position: relative;
+      top: -2px;
+    }
+  }
+}

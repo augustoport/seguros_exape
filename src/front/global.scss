@@ -1,0 +1,16 @@
+/*CSS GLOBAL*/
+
+h1,
+h2,
+h3,
+h4{
+  font-family: $base-font-family-secondary;
+}
+
+h1{
+  color: $primary-color;
+  @include media-breakpoint-down('sm') {
+    color: $secondary-color;
+  }
+}
+
