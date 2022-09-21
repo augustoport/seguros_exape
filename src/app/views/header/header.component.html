@@ -1,1 +1,16 @@
-<p>header works!</p>
+<header class="header d-flex justify-content-between align-items-center py-2">
+  <span class="d-flex d-lg-none d-flex justify-content-center align-items-center">
+      <span class="bar"></span>
+  </span>
+  <img src="assets/images/Allianz_logo_blue.png" class="d-block logo" height="45" alt="Logo" style="margin-left: 150px"/>
+  <div class= "d-lg-flex headerr">
+    <a href="#" class="d-lg-flex align-items-center header__user mr-2">
+      <span>Olá, <strong>{{model.nome}}</strong> </span>
+    </a>
+    <div class="header__btn pr-0">
+      <a href="javascript:void('sair');" (click)="logout()" class="d-lg-flex header__user">
+        <strong style="padding: 3px 15px 3px 3px;">Sair</strong>
+      </a>
+    </div>
+  </div>
+</header>
